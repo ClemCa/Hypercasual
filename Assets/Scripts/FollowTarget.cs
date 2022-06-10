@@ -22,5 +22,4 @@ public class FollowTarget : MonoBehaviour
         pos.y = Mathf.Max(pos.y, target.position.y);
         transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime * _lagSpeed);
     }
-
 }

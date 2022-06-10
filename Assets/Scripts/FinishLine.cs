@@ -7,6 +7,7 @@ using System.Linq;
 
 public class FinishLine : MonoBehaviour
 {
+    [SerializeField] private float _acceleration;
     [SerializeField] private ParticleSystem[] _fireworks;
 
     void Awake()
@@ -23,7 +24,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Controller>().enabled = false;
+            other.GetComponent<PlayerController>().enabled = false;
             foreach(var firework in _fireworks)
             {
                 firework.Play();
@@ -32,9 +33,19 @@ public class FinishLine : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<Rigidbody>().velocity += Vector3.up * Time.deltaTime * _acceleration;
+        }
+    }
+
     private async void DelayedLeaving()
     {
         await System.Threading.Tasks.Task.Delay(5000);
+        if (!Application.isPlaying)
+            return;
         int lastUnlock;
         if (PlayerPrefs.HasKey("LastLevel"))
         {

@@ -46,7 +46,7 @@ public class Transporter : MonoBehaviour
             if(_progress >= 1)
             {
                 _player.GetComponent<Rigidbody>().velocity = (Destination - Origin).normalized * _exitPropulsion;
-                _player.GetComponent<Controller>().enabled = true;
+                _player.GetComponent<PlayerController>().enabled = true;
                 priority = null;
             }
         }
@@ -60,7 +60,7 @@ public class Transporter : MonoBehaviour
                 return;
             priority = this;
             _player = other.transform;
-            other.GetComponent<Controller>().enabled = false;
+            other.GetComponent<PlayerController>().enabled = false;
             var current = InverseLerp(Origin, Destination, other.transform.position);
             int count = 3;
             if(current.x > 1 || current.x < 0)
@@ -89,7 +89,7 @@ public class Transporter : MonoBehaviour
     {
         if(other.CompareTag("Player") && priority == this)
         {
-            other.GetComponent<Controller>().enabled = true;
+            other.GetComponent<PlayerController>().enabled = true;
             priority = null;
         }
     }

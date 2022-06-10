@@ -33,12 +33,21 @@ public class ResponsiveScaling : MonoBehaviour
     private void Scale()
     {
         var res = _scale * Screen.width / _referenceScreenScale.x;
+        Vector3 lossyScale = Vector3.one;
+        if (transform.parent != null)
+            lossyScale = transform.parent.lossyScale;
         if (!_scaleX)
             res.x = _scale.x;
+        else
+            res.x = res.x / lossyScale.x;
         if (!_scaleY)
-            res.y = _scale.y;
+            res.y = _scale.y / lossyScale.y;
+        else
+            res.y = res.y / lossyScale.y;
         if (!_scaleZ)
-            res.z = _scale.z;
+            res.z = _scale.z / lossyScale.z;
+        else
+            res.z = res.z / lossyScale.z;
         transform.localScale = res;
     }
 

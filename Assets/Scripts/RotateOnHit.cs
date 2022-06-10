@@ -6,6 +6,8 @@ public class RotateOnHit : MonoBehaviour
 {
     private bool brick = false;
 
+    public bool Brick { get => brick; }
+
     void OnTriggerEnter(Collider other)
     {
         if (brick)

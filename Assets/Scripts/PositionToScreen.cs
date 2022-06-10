@@ -25,5 +25,4 @@ public class PositionToScreen : MonoBehaviour
         point.y += _yOffset;
         transform.position = point;
     }
-
 }
