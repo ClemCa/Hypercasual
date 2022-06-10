@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 275541392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 37.8, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729488086}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xPercentRelativeToCenter: 0
-  _scale: {x: 1, y: 5, z: 1}
+  _scale: {x: 0.1, y: 5, z: 0.1}
   _referenceScreenScale: {x: 1242, y: 2688}
   _placeX: 1
   _scaleX: 1
@@ -360,7 +360,7 @@ Transform:
   m_GameObject: {fileID: 332906267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3338321, y: 33, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729488086}
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xPercentRelativeToCenter: -0.5
-  _scale: {x: 1, y: 5, z: 1}
+  _scale: {x: 0.1, y: 5, z: 0.1}
   _referenceScreenScale: {x: 1242, y: 2688}
   _placeX: 1
   _scaleX: 1
@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 775639154}
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
   m_LocalPosition: {x: 0.706931, y: 37.8, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729488086}
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xPercentRelativeToCenter: 0.265
-  _scale: {x: 1, y: 5, z: 1}
+  _scale: {x: 0.1, y: 5, z: 0.1}
   _referenceScreenScale: {x: 1242, y: 2688}
   _placeX: 1
   _scaleX: 1
@@ -2001,7 +2001,7 @@ Transform:
   m_GameObject: {fileID: 1842477441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3338321, y: 33, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729488086}
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xPercentRelativeToCenter: 0.5
-  _scale: {x: 1, y: 5, z: 1}
+  _scale: {x: 0.1, y: 5, z: 0.1}
   _referenceScreenScale: {x: 1242, y: 2688}
   _placeX: 1
   _scaleX: 1
@@ -2270,7 +2270,7 @@ Transform:
   m_GameObject: {fileID: 1997701769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 33, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729488086}
@@ -2289,7 +2289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xPercentRelativeToCenter: 0
-  _scale: {x: 1, y: 5, z: 1}
+  _scale: {x: 0.1, y: 5, z: 0.1}
   _referenceScreenScale: {x: 1242, y: 2688}
   _placeX: 1
   _scaleX: 1
@@ -2516,7 +2516,7 @@ Transform:
   m_GameObject: {fileID: 2111734494}
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
   m_LocalPosition: {x: -0.706931, y: 37.8, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 1}
+  m_LocalScale: {x: 0.1, y: 5, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1729488086}
@@ -2551,7 +2551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xPercentRelativeToCenter: -0.265
-  _scale: {x: 1, y: 5, z: 1}
+  _scale: {x: 0.1, y: 5, z: 0.1}
   _referenceScreenScale: {x: 1242, y: 2688}
   _placeX: 1
   _scaleX: 1
