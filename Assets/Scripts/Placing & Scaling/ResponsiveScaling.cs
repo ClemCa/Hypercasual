@@ -13,6 +13,11 @@ public class ResponsiveScaling : MonoBehaviour
     [SerializeField] private bool _scaleY = true;
     [SerializeField] private bool _scaleZ = true;
 
+    // this system is good enough for a wider range of display aspect ratios
+    // but in a definitive production, one might consider including the few
+    // variables that were ignored, such as the space taken by the wall
+    // So that no level designer is forced to avoid putting key elements on
+    // the borders of the available space
 
     void Update()
     {
@@ -32,7 +37,9 @@ public class ResponsiveScaling : MonoBehaviour
 
     private void Scale()
     {
-        var res = _scale * Screen.width / _referenceScreenScale.x;
+        var currentAspectRatio = Screen.width / (float)Screen.height;
+        var referenceAspectRatio = _referenceScreenScale.x / _referenceScreenScale.y;
+        var res = _scale * currentAspectRatio / referenceAspectRatio;
         Vector3 lossyScale = Vector3.one;
         if (transform.parent != null)
             lossyScale = transform.parent.lossyScale;

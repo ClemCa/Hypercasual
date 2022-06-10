@@ -7,7 +7,13 @@ using UnityEngine.UI;
 public class LevelMenu : MonoBehaviour
 {
     [SerializeField] private Transform _buttonParent;
+    [SerializeField] private Vector2 _forceResolution;
 
+    void Awake()
+    {
+        // force resolutoin
+        
+    }
 
     void Start()
     {
