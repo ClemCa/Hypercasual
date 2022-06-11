@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private float _idealFallSpeed = -10;
 	[SerializeField] private float _fallFactor = 2;
 	[SerializeField] private float _slowDownFactor = 2;
+	[Header("Feedback")]
+	[SerializeField] private Arrow _arrow;
+	[SerializeField] private float _arrowDistance = 1;
+	[SerializeField] private Color _validColor = new Color(0, 0.75f, 0);
+	[SerializeField] private Color _invalidColor = new Color(0.75f, 0, 0);
 
 	private Vector2 _touchStartPos;
 	private int _latest = -1;
@@ -131,6 +136,9 @@ public class PlayerController : MonoBehaviour
 				_resetTimer = 0;
 				break;
 			case TouchPhase.Ended:
+				if (_latest != i)
+					break;
+				_arrow.Value = 0;
 				if (_currentSwipes >= 1)
                 {
 					var swipe = GetSwipe(touch);
@@ -144,6 +152,19 @@ public class PlayerController : MonoBehaviour
 			case TouchPhase.Moved:
 				if (_latest != i)
 					break;
+				var swipeDir = (Vector3)GetSwipe(touch).normalized;
+				_arrow.Value = GetSwipePerc(touch);
+				_arrow.transform.position = transform.position + swipeDir * _arrowDistance;
+				_arrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, swipeDir);
+				_arrow.Color = _currentSwipes >= 1 ? _validColor : _invalidColor;
+				break;
+			case TouchPhase.Stationary:
+				if (_latest != i)
+					break;
+				var swipeDirStationary = (Vector3)GetSwipe(touch).normalized;
+				_arrow.transform.position = transform.position + swipeDirStationary * _arrowDistance;
+				_arrow.transform.rotation = Quaternion.FromToRotation(Vector3.right, swipeDirStationary);
+				_arrow.Color = _currentSwipes >= 1 ? _validColor : _invalidColor;
 				break;
 		}
 	}
@@ -163,5 +184,20 @@ public class PlayerController : MonoBehaviour
         {
 			return Vector2.zero;
         }
+	}
+
+	private float GetSwipePerc(Touch touch)
+	{
+		if (_latest == -1)
+			return 0;
+		Vector2 swipe = _touchStartPos - touch.position;
+		if (swipe.magnitude >= _minimumDistance)
+		{
+			return Mathf.Min(swipe.magnitude / _maximumDistance, 1);
+		}
+		else
+		{
+			return 0;
+		}
 	}
 }
