@@ -22,6 +22,7 @@ public class Transporter : MonoBehaviour
             extents.x *= _origin.x;
             extents.y *= _origin.y;
             extents.z = 0;
+            extents = transform.rotation * extents; // rotate extents from identity direction to our rotation
             return GetComponent<Collider>().bounds.center + extents;
         }
     }
@@ -33,6 +34,7 @@ public class Transporter : MonoBehaviour
             extents.x *= _destination.x;
             extents.y *= _destination.y;
             extents.z = 0;
+            extents = transform.rotation * extents; // rotate extents from identity direction to our rotation
             return GetComponent<Collider>().bounds.center + extents;
         }
     }

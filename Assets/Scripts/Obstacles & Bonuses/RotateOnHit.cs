@@ -14,7 +14,14 @@ public class RotateOnHit : MonoBehaviour
             return;
         if (other.CompareTag("Player"))
         {
-            GetComponent<ResponsiveScaling>().enabled = false;
+            if(TryGetComponent<ResponsiveScaling>(out var res))
+            {
+                res.enabled = false;
+            }
+            if (TryGetComponent<ScreenRelativeScaling>(out var scr))
+            {
+                scr.enabled = false;
+            }
             var rb = gameObject.AddComponent<Rigidbody>();
             rb.AddTorque(Vector3.right * other.GetComponent<Rigidbody>().velocity.y * 10, ForceMode.Impulse);
             rb.AddForce(Vector3.forward * 1 + Vector3.down * 1, ForceMode.Impulse);

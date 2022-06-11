@@ -21,6 +21,10 @@ public class Lock : MonoBehaviour
         if (unlocked)
         {
             brick = true;
+            if (TryGetComponent<ScreenRelativeScaling>(out var scr))
+            {
+                scr.enabled = false;
+            }
             var rb = gameObject.AddComponent<Rigidbody>();
             rb.AddTorque(Vector3.right * 10, ForceMode.Impulse);
             rb.AddForce(Vector3.forward * 1 + Vector3.down * 1, ForceMode.Impulse);

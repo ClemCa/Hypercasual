@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1837036533977183645}
   - component: {fileID: 1837036533977183644}
   - component: {fileID: 1837036533977183647}
-  - component: {fileID: 1837036533977183646}
   - component: {fileID: 1837036533977183650}
+  - component: {fileID: 4147636082874373524}
   m_Layer: 0
   m_Name: RotateOnTouch
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837036533977183640}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 20, z: 1}
+  m_LocalPosition: {x: -1.4405389, y: 28.63, z: 1}
   m_LocalScale: {x: 8.244766, y: 1.6489533, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99,25 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1837036533977183646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837036533977183640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0b09146f1bc2c469d6227d84e674be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _xPercentRelativeToCenter: 0
-  _scale: {x: 5, y: 1, z: 1}
-  _referenceScreenScale: {x: 1242, y: 2688}
-  _placeX: 1
-  _scaleX: 1
-  _scaleY: 1
-  _scaleZ: 0
 --- !u!114 &1837036533977183650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddf397f24920b145979d1da272f1ca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4147636082874373524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837036533977183640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf3b841e9a99564c9afea9e7eb913bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _leftMostPosition: 0.55
+  _rightMostPosition: 0.9
+  _placeX: 1
+  _scaleX: 1
