@@ -117,8 +117,6 @@ public class PlayerController : MonoBehaviour
 
 	private void RunTouch(Touch touch, int i)
     {
-		if (_currentSwipes < 1)
-			return;
 		switch (touch.phase)
 		{
 			case TouchPhase.Began:
@@ -133,9 +131,12 @@ public class PlayerController : MonoBehaviour
 				_resetTimer = 0;
 				break;
 			case TouchPhase.Ended:
-				var swipe = GetSwipe(touch);
-				_rigidbody.velocity = swipe;
-				_rigidbody.AddTorque(swipe * _torqueMultiplier, ForceMode.VelocityChange);
+				if (_currentSwipes >= 1)
+                {
+					var swipe = GetSwipe(touch);
+					_rigidbody.velocity = swipe;
+					_rigidbody.AddTorque(swipe * _torqueMultiplier, ForceMode.VelocityChange);
+				}
 				_latest = -1;
 				_currentSwipes--;
 				_resetTimer = 0;
